@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universidad Santa Lala</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+<body>
+    <div id="message-box" class="message-box"></div>
+
+    
+
+    <nav>
+        <h1>Universidad Santa Lala</h1>
+        <img class="logo" src="assets/img/Logo.png" alt="Logo">
+    </nav>
+
+    <section id="section-alta-alumno">
+        <h2>Alta de Alumnos</h2>
+        <form id="form-alta-alumno">
+            <label for="nombre-alumno">Nombre:</label>
+            <input type="text" id="nombre-alumno" required>
+
+            <label for="apellidos-alumno">Apellidos:</label>
+            <input type="text" id="apellidos-alumno" required>
+
+            <label for="edad-alumno">Edad:</label>
+            <input type="number" id="edad-alumno" min="1" required>
+
+            <button type="submit" id="btn-dar-alta-alumno">Dar de Alta Alumno</button>
+        </form>
+        <div class="navigation-buttons">
+            <button class="next-step-button" data-next-section="section-materias-calificaciones">Siguiente Paso</button>
+        </div>
+    </section>
+
+    <section id="section-materias-calificaciones">
+        <h2>Gestión de Materias y Calificaciones</h2>
+        <form id="form-inscribir-calificar">
+            <h3>Inscribir Alumno a Materia</h3>
+            <label for="select-alumno-inscribir">Seleccionar Alumno:</label>
+            <select id="select-alumno-inscribir" required>
+                <option value="">-- Seleccione un alumno --</option>
+            </select>
+
+            <label for="nombre-materia-inscribir">Nombre de la Materia:</label>
+            <input type="text" id="nombre-materia-inscribir" required>
+
+            <button type="button" id="btn-inscribir-materia">Inscribir a Materia</button>
+
+            <h3>Asignar Calificación</h3>
+            <label for="select-alumno-calificar">Seleccionar Alumno:</label>
+            <select id="select-alumno-calificar" required>
+                <option value="">-- Seleccione un alumno --</option>
+            </select>
+
+            <label for="select-materia-calificar">Seleccionar Materia:</label>
+            <select id="select-materia-calificar" required>
+                <option value="">-- Seleccione una materia --</option>
+            </select>
+
+            <label for="calificacion-materia">Calificación:</label>
+            <input type="number" id="calificacion-materia" min="0" max="100" step="0.1" required>
+
+            <button type="button" id="btn-asignar-calificacion">Asignar Calificación</button>
+        </form>
+        <div class="navigation-buttons">
+            <button class="prev-step-button" data-prev-section="section-alta-alumno">Paso Anterior</button>
+            <button class="next-step-button" data-next-section="section-grupos">Siguiente Paso</button>
+        </div>
+    </section>
+
+    <section id="section-grupos">
+        <h2>Gestión de Grupos</h2>
+        <form id="form-gestion-grupos">
+            <h3>Crear Nuevo Grupo</h3>
+            <label for="nombre-grupo">Nombre del Grupo:</label>
+            <input type="text" id="nombre-grupo" required>
+            <button type="button" id="btn-crear-grupo">Crear Grupo</button>
+
+            <h3>Asignar Alumno a Grupo</h3>
+            <label for="select-alumno-grupo">Seleccionar Alumno:</label>
+            <select id="select-alumno-grupo" required>
+                <option value="">-- Seleccione un alumno --</option>
+            </select>
+
+            <label for="select-grupo-asignar">Seleccionar Grupo:</label>
+            <select id="select-grupo-asignar" required>
+                <option value="">-- Seleccione un grupo --</option>
+            </select>
+            <button type="button" id="btn-asignar-alumno-grupo">Asignar Alumno a Grupo</button>
+        </form>
+        <div class="navigation-buttons">
+            <button class="prev-step-button" data-prev-section="section-materias-calificaciones">Paso Anterior</button>
+            <button class="next-step-button" data-next-section="section-consultas">Siguiente Paso</button>
+        </div>
+    </section>
+
+    <section id="section-consultas">
+        <h2>Consultas y Reportes</h2>
+
+        <h3>Buscar Alumno</h3>
+        <div class="button-group">
+            <input type="text" id="input-buscar-nombre" placeholder="Buscar por Nombre">
+            <button id="btn-buscar-nombre">Buscar por Nombre</button>
+            <input type="text" id="input-buscar-apellido" placeholder="Buscar por Apellido">
+            <button id="btn-buscar-apellido">Buscar por Apellido</button>
+            <input type="text" id="input-buscar-id" placeholder="Buscar por ID (Punto Extra)">
+            <button id="btn-buscar-id">Buscar por ID</button>
+        </div>
+        <div id="resultado-busqueda"></div>
+
+        <h3>Promedios</h3>
+        <div class="button-group">
+            <label for="select-alumno-promedio">Promedio de Alumno:</label>
+            <select id="select-alumno-promedio">
+                <option value="">-- Seleccione un alumno --</option>
+            </select>
+            <button id="btn-obtener-promedio-alumno">Obtener Promedio</button>
+            <div id="resultado-promedio-alumno"></div>
+        </div>
+
+        <div class="button-group">
+            <label for="select-grupo-promedio">Promedio de Grupo:</label>
+            <select id="select-grupo-promedio">
+                <option value="">-- Seleccione un grupo --</option>
+            </select>
+            <button id="btn-obtener-promedio-grupo">Obtener Promedio del Grupo</button>
+            <div id="resultado-promedio-grupo"></div>
+        </div>
+
+        <h3>Listados</h3>
+        <div class="button-group">
+            <button id="btn-mostrar-todos-alumnos">Mostrar Todos los Alumnos</button>
+            <button id="btn-ordenar-calificacion-asc">Ordenar por Calificación (Asc)</button>
+            <button id="btn-ordenar-calificacion-desc">Ordenar por Calificación (Desc)</button>
+            <button id="btn-ordenar-edad-asc">Ordenar por Edad (Asc - Extra)</button>
+            <button id="btn-ordenar-edad-desc">Ordenar por Edad (Desc - Desc)</button>
+        </div>
+        <div id="lista-alumnos"></div>
+        <div id="lista-grupos"></div>
+
+        <div class="navigation-buttons">
+            <button class="prev-step-button" data-prev-section="section-grupos">Paso Anterior</button>
+            <button class="back-to-start-button" data-start-section="section-alta-alumno">Volver al Inicio</button>
+        </div>
+    </section>
+    <script src="assets/js/base.js"></script>
+</body>
+</html>

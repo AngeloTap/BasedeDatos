@@ -1,0 +1,142 @@
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 150px;
+    background-color: #f3e9e7;
+    color: #333;
+    line-height: 1.6;
+    background-image: url('/assets/img/Fondodepantalla.png'); 
+    background-size: cover;            
+    background-repeat: no-repeat;       
+    background-position: center center; 
+    height: 100vh;                      
+    margin: 0;                          
+}
+h1, h2 {
+    color: #2c3e50;
+    background-color: #f3e9e7;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+section {
+    background-color: #f3e9e7;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: none;
+}
+
+#section-alta-alumno {
+    display: block;
+}
+form {
+    display: grid;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+input[type="text"],
+input[type="number"],
+select {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; 
+}
+button {
+    background-color: red;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    margin-top: 10px; 
+}
+button:hover {
+    background-color: #e37830;
+}
+.message-box {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #4CAF50; /* Green */
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    z-index: 1000;
+    display: none; /* Hidden by default */
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+.message-box.error {
+    background-color: #f44336; /* Red */
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+.button-group {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap; 
+    margin-top: 15px;
+}
+.button-group button {
+    flex-grow: 1; 
+}
+.next-step-button {
+    background-color: #28a745; 
+}
+.next-step-button:hover {
+    background-color: #218838;
+}
+.prev-step-button {
+    background-color: #6c757d; 
+}
+.prev-step-button:hover {
+    background-color: #5a6268;
+}
+.back-to-start-button {
+    background-color: red; 
+}
+.back-to-start-button:hover {
+    background-color: #e37830;
+}
+.navigation-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    gap: 10px;
+}
+.navigation-buttons button {
+    flex: 1;
+}
